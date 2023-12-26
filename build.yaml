@@ -19,7 +19,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: Pandemonium
+    shield: pandemonium
 include:
   - board: seeeduino_xiao_ble
-    shield: Pandemonium
+    shield: pandemonium
