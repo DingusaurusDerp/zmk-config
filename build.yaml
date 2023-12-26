@@ -19,13 +19,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: qaz
+    shield: Pandemonium
 include:
   - board: seeeduino_xiao_ble
-    shield: qaz
-include:
-  - board: seeeduino_xiao_ble
-    shield: qaz
-include:
-  - board: seeeduino_xiao_ble
-    shield: qaz
+    shield: Pandemonium
