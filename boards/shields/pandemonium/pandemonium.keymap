@@ -57,10 +57,10 @@
 		
         NUMFN {
             bindings = <
-    &kp ESC     &trans    &trans    &trans    &kp GRAVE     &trans    &kp MINUS           &kp EQUAL        &kp BSLH         &trans
+    &kp ESC     &trans    &trans    &trans    &kp GRAVE     &mo 2    &kp MINUS           &kp EQUAL        &kp BSLH         &trans
     &kp N1     &kp N2    &kp N3    &kp N4    &kp N5     &kp N6    &kp N7           &kp N8   &kp N9      &kp N0
     &trans     &trans    &trans    &trans   &trans    &kp NUBS   &kp DOT  &kp COMMA  &kp RETURN
-	&kp LCTRL  &kp LALT  &kp SPACE  &trans  &lt 2 BSPC  &kp RALT
+	&mt LCTRL LGUI  &kp LALT  &kp SPACE  &trans  &kp BSPC  &kp RALT
             >;
         };
 		
@@ -69,7 +69,7 @@
     &trans  &trans  &trans   &trans  &trans  &kp FSLH  &kp F11     &kp F12     &kp LBKT       &kp RBKT
     &kp F1  &kp F2   &kp F3  &kp F4    &kp F5     &kp F6  &kp F7  &kp F8  &kp F9    &kp F10
     &trans    &trans   &trans  &trans    &trans     &trans    &trans       &trans       &trans
-	&trans    &trans   &trans  &trans  &trans     &trans
+	&trans    &kp LALT   &trans  &trans  &trans     &trans
             >;
         };
 		
