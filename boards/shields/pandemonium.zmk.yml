@@ -1,8 +1,0 @@
-file_format: "1"
-id: pandemonium
-name: PANDEMONIUM
-type: shield
-url: https://github.com/calvin-mcd/pandemonium
-requires: [seeeduino_xiao_ble]
-features:
-  - keys
