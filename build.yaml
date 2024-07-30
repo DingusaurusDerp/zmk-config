@@ -20,6 +20,3 @@
 include:
   - board: seeeduino_xiao_ble
     shield: pandemonium
-include:
-  - board: seeeduino_xiao_ble
-    shield: pandemonium
