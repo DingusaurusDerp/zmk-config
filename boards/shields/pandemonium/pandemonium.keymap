@@ -8,40 +8,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define ALPHA 0
-#define NUMFN 1
-#define SYMBL 2
-#define NAVVL 3
-
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
+            display-name = "homerow mods";
             #binding-cells = <2>;
             tapping-term-ms = <225>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
-};
 
-/ {
-    macros {
-        SECT: SECT {
-            label = "SECT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp N0 &kp N0 &kp N0 &kp A &kp N7>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp X <&macro_release &kp LALT>
-            ;
-        };
-    };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
