@@ -20,3 +20,5 @@
 include:
   - board: seeeduino_xiao_ble
     shield: pandemonium
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
