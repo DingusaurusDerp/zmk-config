@@ -23,7 +23,7 @@ manifest:
     path: config
 ```
 
-After updating your `west` manifest, copy [`boards/shields/pandemonium/pandemonium.keymap`](boards/shields/pandemonium/pandemonium.keymap) into your `config` folder for later modification. If desired, add a `pandemonium.conf` to the same folder for [any Kconfig customizations](https://zmk.dev/docs/config#kconfig-files). Don't forget to [edit your `build.yaml`](https://zmk.dev/docs/customization#building-additional-keyboards) to include the new shield(s):
+After updating your `west` manifest, copy [`boards/shields/pandemonium/pandemonium.keymap`](boards/shields/pandemonium/pandemonium.keymap) into your `config` folder for later modification. Don't forget to [edit your `build.yaml`](https://zmk.dev/docs/customization#building-additional-keyboards) to include the new shield(s):
 
 ```yaml
 ---
@@ -35,6 +35,10 @@ include:
     shield: settings_reset
 ```
 
+### Optional
+
+- Add a `pandemonium.conf` to your `config/` folder for [any Kconfig customizations](https://zmk.dev/docs/config#kconfig-files).
+
 ---
 
 ## More Information
@@ -42,6 +46,18 @@ include:
 Note that this keyboard currently *requires* a Xiao BLE, as the two NFC pins are used as additional GPIO.
 
 Original production files available [here](https://github.com/calvin-mcd/pandemonium/tree/0ebd15b3f84ab01ea783c1a32927fb8e13194ffd).
+
+### Matrix Transforms
+
+Since Pandemonium has multiple bottom row layout options, you can switch to one of them in your keymap to make editing a little easier. Check [`boards/shields/pandemonium/pandemonium-transforms.dtsi`](boards/shields/pandemonium/pandemonium-transforms.dtsi) for the full list of options.
+
+Select the desired layout by modifying the `chosen` node; this can be done at the top of your keymap.
+
+```dts
+chosen {
+    zmk,matrix-transform = &bigbar_transform; /* 7u spacebar */
+};
+```
 
 ## Common Questions/Problems
 
