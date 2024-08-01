@@ -37,6 +37,7 @@ include:
 
 ### Optional
 
+- Copy [`config/pandemonium.json`](config/pandemonium.json) into your `config/` folder in order to use [nickcoutsous's Keymap Editor](https://nickcoutsous.github.io/keymap-editor).
 - Add a `pandemonium.conf` to your `config/` folder for [any Kconfig customizations](https://zmk.dev/docs/config#kconfig-files).
 
 ---
@@ -49,7 +50,7 @@ Original production files available [here](https://github.com/calvin-mcd/pandemo
 
 ### Matrix Transforms
 
-Since Pandemonium has multiple bottom row layout options, you can switch to one of them in your keymap to make editing a little easier. Check [`boards/shields/pandemonium/pandemonium-transforms.dtsi`](boards/shields/pandemonium/pandemonium-transforms.dtsi) for the full list of options.
+Since Pandemonium has multiple bottom row layout options, you can switch to one of them in your keymap to make editing a little easier. The alternate layout will also be shown in [Keymap Editor](https://nickcoutsous.github.io/keymap-editor). Check [`boards/shields/pandemonium/pandemonium-transforms.dtsi`](boards/shields/pandemonium/pandemonium-transforms.dtsi) for the full list of options.
 
 Select the desired layout by modifying the `chosen` node; this can be done at the top of your keymap.
 
