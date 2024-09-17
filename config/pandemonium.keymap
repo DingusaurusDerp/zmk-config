@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define ALPHA 0
 #define NUMFN 1
@@ -32,53 +32,105 @@
             label = "SECT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-				= <&macro_tap &kp N0 &kp N0 &kp N0 &kp A &kp N7>
-				, <&macro_press &kp LALT>
-				, <&macro_tap &kp X>
-				, <&macro_release &kp LALT>
-			;
+            bindings =
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp N0 &kp A &kp N7>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp X>,
+                <&macro_release>,
+                <&kp LALT>;
         };
     };
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        QuestionMarkSlash {
+            bindings = <&kp SLASH>;
+            key-positions = <27 28>;
+        };
+
+        SemiColon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <17 18>;
+        };
+
+        TabDN {
+            bindings = <&kp TAB>;
+            key-positions = <0 1>;
+        };
+
+        EscDN {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+        };
+
+        Rbrac {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <8 9>;
+        };
+
+        Lbrac {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <6 7>;
+        };
+
+        Bslsh {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <7 8>;
+        };
+
+        GravDN {
+            bindings = <&kp GRAVE>;
+            key-positions = <27 26>;
+        };
+
+        Bluetooth {
+            bindings = <&mo 3>;
+            key-positions = <31 33>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         ALPHA {
             bindings = <
-    &kp Q      &kp W       &kp E         &kp R        &kp T        &kp Y     &kp U         &kp I         &kp O       &kp P
-    &kp A    &kp S  &kp D  &kp F  &kp G        &kp H     &kp J  &kp K  &kp L  &kp  APOS
-    &mt LSHIFT Z      &kp X       &kp C         &kp V        &kp B        &kp N     &kp M         &kp COMMA     &mt RSHIFT DOT
-	&kp LCTRL  &kp LALT    &lt 1 SPACE    &trans      &lt 3 BSPC  &kp RALT
+&kp Q         &kp W  &kp E     &kp R        &kp T   &kp Y       &kp U  &kp I      &kp O  &kp P
+&kp A         &kp S  &kp D     &kp F        &kp G   &kp H       &kp J  &kp K      &kp L  &kp APOS
+&mt LSHIFT Z  &kp X  &kp C     &kp V        &kp B   &kp N       &kp M  &kp COMMA         &mt RSHIFT DOT
+&kp LCTRL            &kp LALT  &lt 1 SPACE  &trans  &lt 2 BSPC         &kp RALT
             >;
         };
-		
+
         NUMFN {
             bindings = <
-    &kp ESC     &trans    &trans    &trans    &kp GRAVE     &mo 2    &kp MINUS           &kp EQUAL        &kp BSLH         &trans
-    &kp N1     &kp N2    &kp N3    &kp N4    &kp N5     &kp N6    &kp N7           &kp N8   &kp N9      &kp N0
-    &trans     &trans    &trans    &trans   &trans    &kp NUBS   &kp FSLH  &kp COMMA  &mt RSHIFT RETURN
-	&mt LCTRL LGUI  &kp LALT  &kp SPACE  &trans  &kp BSPC  &kp RALT
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)  &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)
+&kp N1            &kp N2            &kp N3            &kp N4            &kp N5      &kp N6            &kp N7      &kp N8      &kp N9      &kp N0
+&trans            &trans            &trans            &trans            &trans      &kp MINUS         &kp EQUAL   &kp COMMA               &mt RSHIFT RETURN
+&mt LCTRL LGUI                      &kp LALT          &kp SPACE         &trans      &kp BSPC                      &kp RALT
             >;
         };
-		
-        SYMBL {
-            bindings = <
-    &trans  &trans  &trans   &trans  &trans  &kp FSLH  &kp F11     &kp F12     &kp LBKT       &kp RBKT
-    &kp F1  &kp F2   &kp F3  &kp F4    &kp F5     &kp F6  &kp F7  &kp F8  &kp F9    &kp F10
-    &trans    &trans   &trans  &trans    &trans     &trans    &trans       &trans       &kp CAPS
-	&trans    &trans   &trans  &trans  &trans     &trans
-            >;
-        };
-		
+
         NAVVL {
             bindings = <
-    &kp TAB    &kp PG_DN    &kp UP     &kp PG_UP   &trans  &trans      &trans     &kp END        &kp HOME  &kp PSCRN
-    &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans  &trans    &kp INS     &kp DEL       &kp SEMI   &kp APOS
-    &trans    &trans    &trans     &trans   &kp C_MUTE  &kp C_VOL_DN  &kp C_PLAY  &kp C_VOL_UP  &trans
-    &trans    &trans    &trans    &trans  &trans  &trans
+&kp F1  &kp F2   &kp F3   &kp F4   &kp DELETE  &kp PG_UP     &kp END     &kp UP        &kp HOME   &kp PSCRN
+&kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT  &kp PG_DN     &kp LEFT    &kp DOWN      &kp RIGHT  &kp APOS
+&kp F9  &kp F10  &kp F11  &kp F12  &kp C_MUTE  &kp C_VOL_DN  &kp C_PLAY  &kp C_VOL_UP             &trans
+&trans           &trans   &trans   &trans      &trans                    &trans
+            >;
+        };
+
+        Bluetooth {
+            bindings = <
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &trans  &trans      &trans
+&trans         &trans         &trans         &trans         &trans         &trans  &trans  &trans              &trans
+&trans                        &trans         &trans         &trans         &trans          &trans
             >;
         };
     };
