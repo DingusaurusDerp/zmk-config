@@ -93,6 +93,11 @@
             bindings = <&mo 3>;
             key-positions = <31 33>;
         };
+
+        GamingLayer {
+            bindings = <&tog 4>;
+            key-positions = <11 2 13>;
+        };
     };
 
     keymap {
