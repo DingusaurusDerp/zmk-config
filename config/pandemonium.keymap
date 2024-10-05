@@ -66,22 +66,22 @@
 
         EscDN {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
+            key-positions = <2 0>;
         };
 
         Rbrac {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <8 9>;
+            key-positions = <6 5>;
         };
 
         Lbrac {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <6 7>;
+            key-positions = <3 4>;
         };
 
         Bslsh {
             bindings = <&kp BACKSLASH>;
-            key-positions = <7 8>;
+            key-positions = <4 5>;
         };
 
         GravDN {
@@ -131,6 +131,15 @@
 &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &trans  &trans      &trans
 &trans         &trans         &trans         &trans         &trans         &trans  &trans  &trans              &trans
 &trans                        &trans         &trans         &trans         &trans          &trans
+            >;
+        };
+
+        GamingLayer {
+            bindings = <
+&kp ESCAPE  &kp Q         &kp W         &kp E         &kp R         &kp T          &kp Y  &kp U          &kp I  &kp O
+&kp TAB     &kp A         &kp S         &kp D         &kp F         &kp G          &kp H  &kp J          &kp K  &kp L
+&kp LSHFT   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N          &kp M  &kp COMMA             &kp PERIOD
+&kp LCTRL                 &kp LEFT_ALT  &kp SPACE     &trans        &kp BACKSPACE         &kp RIGHT_ALT
             >;
         };
     };
