@@ -96,7 +96,7 @@
 
         GamingLayer {
             bindings = <&tog 4>;
-            key-positions = <11 2 13>;
+            key-positions = <11 2 13 12>;
         };
     };
 
