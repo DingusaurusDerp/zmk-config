@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "pandemonium-transforms.dtsi"
+#include "pandemonium-transform.dtsi"
+#include "pandemonium-layout.dtsi"
 
 / {
     chosen {
