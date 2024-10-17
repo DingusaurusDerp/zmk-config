@@ -7,6 +7,10 @@
 #include <physical_layouts.dtsi>
 
 / {
+    chosen {
+		zmk,physical-layout = &default_layout;
+	};
+
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
@@ -357,47 +361,42 @@
         compatible = "zmk,physical-layout-position-map";
         default_map {
             physical-layout = <&default_layout>;
-            positions
-                = < 30 31 32 33 34 >;
+            positions = <30 31 32 33 34>;
         };
 
-        /* Note: positions 0-34 are actually on the PCB.
-         * Positions 35 and above are placeholders which will hopefully be used and restored when switching between layouts.
-         */
         three_one_175u_125u_map {
             physical-layout = <&three_one_175u_125u_layout>;
-            positions
-                = < 35 30 31 32 33 >;
+            positions = <34 30 31 32 33>;
         };
 
         one_three_175u_125u_map {
             physical-layout = <&one_three_175u_125u_layout>;
-            positions
-                = < 30 31 36 32 33 >;
+            positions = <30 31 34 32 33>;
         };
 
         four_key_symmetric_split_map {
             physical-layout = <&four_key_symmetric_split_layout>;
-            positions
-                = < 30 31 37 32 33 >;
+            positions = <30 31 34 32 33>;
         };
 
         three_one_three_map {
             physical-layout = <&three_one_three_layout>;
-            positions
-                = < 35 30 31 32 39 >;
+            positions = <33 30 31 32 34>;
+        };
+
+        one_three_three_layout {
+            physical-layout = <&one_three_three_layout>;
+            positions = <30 31 33 32 34>;
         };
 
         one_six_map {
             physical-layout = <&one_six_layout>;
-            positions
-                = < 30 36 31 38 39 >;
+            positions = <30 32 31 33 34>;
         };
 
         bigbar_map {
             physical-layout = <&bigbar_layout>;
-            positions
-                = < 35 36 30 38 39 >;
+            positions = <31 32 30 33 34>;
         };
     };
 };

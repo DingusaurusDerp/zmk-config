@@ -52,29 +52,23 @@ Original production files available [here](https://github.com/calvin-mcd/pandemo
 
 Since Pandemonium has multiple bottom row layout options, you can switch to one of them in your keymap to facilitate editing. There are two mutually-exclusive ways to configure this:
 
-- A **`matrix-transform`**. Check [`boards/shields/pandemonium/pandemonium-transforms.dtsi`](boards/shields/pandemonium/pandemonium-transforms.dtsi) for the full list of options. The alternate layout will be shown in Keymap Editor.
-- A **`physical-layout`** will be used by [ZMK Studio](https://github.com/zmkfirmware/zmk-studio). Check [`boards/shields/pandemonium/pandemonium-layouts.dtsi`](boards/shields/pandemonium/pandemonium-layouts.dtsi) for the full list of options. The alternate layouts will be shown in ZMK Studio.
+- A **`matrix-transform`**. Check [`boards/shields/pandemonium/pandemonium-transform.dtsi`](boards/shields/pandemonium/pandemonium-transform.dtsi) for the full list of options. The alternate layout will be shown in Keymap Editor.
+- A **`physical-layout`** will be used by [ZMK Studio](https://github.com/zmkfirmware/zmk-studio). Check [`boards/shields/pandemonium/pandemonium-layout.dtsi`](boards/shields/pandemonium/pandemonium-layout.dtsi) for the full list of options. The alternate layouts will be shown in ZMK Studio.
 
 Select the desired layout by modifying the `chosen` node; this can be done at the top of your keymap.
 
 ```dts
 chosen {
-    zmk,matrix-transform = &bigbar_transform; /* 7u spacebar */
+    zmk,physical-layout = &bigbar_layout; /* 7u spacebar */
 };
 ```
 
-This repository currently defaults to `matrix-transform`. This default is subject to change in the future as ZMK Studio matures.
-
-To switch to `physical-layout` ahead of that time:
-- `#include` the file containing physical layout information
-- The `matrix-transform` property must be deleted from the `chosen` node
+This repository currently defaults to `physical-layout`. To use `matrix-transform` instead, be sure to delete the `physical-layout` property from the `chosen` node.:
 
 ```dts
-#include "pandemonium-layouts.dtsi"
-
 chosen {
-    /delete-property/ zmk,matrix-transform;
-    zmk,physical-layout = &bigbar_layout;
+    /delete-property/ zmk,physical-layout;
+    zmk,matrix-transform = &bigbar_transform;
 };
 ```
 

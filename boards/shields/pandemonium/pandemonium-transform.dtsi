@@ -7,10 +7,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen {
-        zmk,matrix-transform = &default_transform;
-    };
-
     default_transform: default_transform {
         compatible = "zmk,matrix-transform";
         columns = <5>;
