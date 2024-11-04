@@ -96,7 +96,32 @@
 
         GamingLayer {
             bindings = <&tog 4>;
-            key-positions = <11 2 13 12>;
+            key-positions = <11 2 13>;
+        };
+
+        Gaming1 {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <11 33>;
+        };
+
+        Gaming2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <12 33>;
+        };
+
+        Gaming3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <13 33>;
+        };
+
+        Gaming4 {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <14 33>;
+        };
+
+        Gaming5 {
+            bindings = <&kp NUMBER_5>;
+            key-positions = <1 33>;
         };
     };
 
@@ -132,9 +157,9 @@
 
         Bluetooth {
             bindings = <
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &trans  &trans      &trans
-&trans         &trans         &trans         &trans         &trans         &trans  &trans  &trans              &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &sys_reset  &bt BT_CLR  &bt BT_CLR_ALL
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &trans      &trans      &trans
+&trans         &trans         &trans         &trans         &trans         &trans  &trans  &trans                  &trans
 &trans                        &trans         &trans         &trans         &trans          &trans
             >;
         };

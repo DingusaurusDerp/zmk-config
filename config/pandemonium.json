@@ -1,4 +1,6 @@
 {
+  "id": "pandemonium",
+  "name": "pandemonium",
   "layouts": {
     "default_transform": {
       "layout": [
@@ -322,5 +324,6 @@
         { "row": 3, "col": 4, "x":  1.5, "y": 3.25, "label": "Space", "u":    7 }
       ]
     }
-  }
+  },
+  "sensors": []
 }
